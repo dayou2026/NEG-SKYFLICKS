@@ -235,30 +235,40 @@ body {
 }
 
 .video-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 100%;
     margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-    .video-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
+    overflow-x: auto;
+    padding: 0 20px;
 }
 
 .video-placeholder {
+    flex: 0 0 auto;
     position: relative;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    width: 220px;
+    height: 391px; /* 9:16 aspect ratio */
+}
+
+@media (max-width: 768px) {
+    .video-grid {
+        flex-wrap: wrap;
+    }
+    
+    .video-placeholder {
+        width: calc(50% - 10px);
+        height: auto;
+        padding-bottom: 177.78%; /* 9:16 aspect ratio */
+    }
 }
 
 .vertical-video {
-    /* 9:16 aspect ratio */
-    padding-bottom: 177.78%;
     background: linear-gradient(135deg, rgba(66, 153, 225, 0.1) 0%, rgba(102, 126, 234, 0.1) 100%);
 }
 
@@ -1156,6 +1166,68 @@ body {
     
     .airplane-wings {
         width: 200px;
+    }
+    
+    /* Additional Mobile Adjustments */
+    .section {
+        padding: 60px 0;
+    }
+    
+    .content-grid {
+        gap: 30px;
+    }
+    
+    .video-grid {
+        gap: 20px;
+    }
+    
+    .play-button {
+        font-size: 3rem;
+    }
+    
+    .video-label {
+        font-size: 1rem;
+    }
+    
+    .step {
+        gap: 15px;
+    }
+    
+    .step-icon {
+        font-size: 1.5rem;
+    }
+    
+    .step-content {
+        font-size: 1rem;
+    }
+    
+    .benefit-card {
+        padding: 20px;
+    }
+    
+    .benefit-icon {
+        font-size: 2rem;
+    }
+    
+    .benefit-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .partnership-placeholder {
+        padding: 40px;
+        min-height: 300px;
+    }
+    
+    .handshake-icon {
+        font-size: 6rem;
+    }
+    
+    .contact-content {
+        padding: 0 20px;
+    }
+    
+    .contact-info {
+        font-size: 1rem;
     }
 }
 
